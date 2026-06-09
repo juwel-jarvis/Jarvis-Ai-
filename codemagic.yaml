@@ -1,0 +1,14 @@
+workflows:
+  android-build:
+    name: JARVIS Android Build
+    environment:
+      java: 17
+    scripts:
+      - name: Build APK
+        script: |
+          curl -L https://services.gradle.org/distributions/gradle-7.5-bin.zip -o gradle.zip
+          unzip -q gradle.zip
+          export PATH=$PATH:$(pwd)/gradle-7.5/bin
+          gradle assembleRelease
+    artifacts:
+      - app/build/outputs/apk/release/*.apk
