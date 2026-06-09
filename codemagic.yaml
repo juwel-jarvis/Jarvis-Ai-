@@ -1,6 +1,6 @@
 workflows:
   android-build:
-    name: JARVIS Android Build
+    name: JARVIS AI Build
     environment:
       java: 17
     scripts:
